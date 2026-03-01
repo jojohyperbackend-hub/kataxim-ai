@@ -1,10 +1,10 @@
-// src/middleware.ts
+// src/proxy.ts
 import { NextRequest, NextResponse } from "next/server";
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  const guestName      = req.cookies.get("guest_name")?.value;
+  const guestName       = req.cookies.get("guest_name")?.value;
   const firebaseSession = req.cookies.get("firebase_session")?.value;
 
   const isLoggedIn = !!firebaseSession || !!guestName;

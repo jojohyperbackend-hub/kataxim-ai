@@ -43,8 +43,13 @@ function deleteCookie(name: string) {
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: (i: number = 0) => ({
-    opacity: 1, y: 0,
-    transition: { duration: 0.5, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] },
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      delay: i * 0.07,
+      ease: "easeOut" as const,
+    },
   }),
 };
 
@@ -56,7 +61,7 @@ const overlayAnim = {
 
 const modalAnim = {
   hidden: { opacity: 0, scale: 0.93, y: 24 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.32, ease: [0.22, 1, 0.36, 1] } },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.32, ease: "easeOut" as const } },
   exit: { opacity: 0, scale: 0.96, y: 12, transition: { duration: 0.18 } },
 };
 
