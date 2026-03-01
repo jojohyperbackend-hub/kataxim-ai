@@ -23,15 +23,16 @@ function setCookie(name: string, value: string, days = 1) {
 // ── ANIMATIONS ────────────────────────────────────────────
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.42, ease: [0.22, 1, 0.36, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.42, ease: "easeOut" as const } },
   exit: { opacity: 0, y: -10, transition: { duration: 0.18 } },
 };
 
 const slideIn = {
   hidden: { opacity: 0, x: -20 },
   visible: (i: number = 0) => ({
-    opacity: 1, x: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" as const },
   }),
 };
 
